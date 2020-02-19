@@ -3,15 +3,24 @@
 }
 
 body {
-  font-family: Lato, Arial, Helvetica, sans-serif;
   margin: 0px !important;
   padding: 0px !important;
+
+  font-family: Lato, Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3, p {
+/* for EDGE browser */
+h1, h2, h3, p, ul {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+
+  border: 0 !important;
 }
+
+ul {
+  list-style-type:none !important;
+}
+/* for EDGE browser */
 
 h1 {
   font-size: 1.6rem;
@@ -48,21 +57,21 @@ navigation bar
 */
 
 .nav {
-  background-color: #2d303a;
-  height: 95px;
-
+  display: flex;
+  justify-content: space-between;
   padding-right: 40px;
   padding-left: 40px;
+  height: 95px;
+  
+  background-color: #2d303a;
 
   border-bottom: solid 6px #323746;
 }
 
 .nav h1 {
-  color: #f2f2f2;
-
-  float: left;
-
   padding-top: 32px;
+  
+  color: #f2f2f2;
   letter-spacing: -0.8px;
   text-transform: uppercase;
 }
@@ -71,12 +80,15 @@ navigation bar
   color: #f06c64;
 }
 
+.nav ul {
+  display: flex;
+}
+
 .nav ul * {
   letter-spacing: -0.29px;
 }
 
 .nav ul li {
-  float: right;
   padding-top: 40px;
 }
 
@@ -87,11 +99,11 @@ navigation bar
   text-transform: uppercase;
 }
 
-.nav li:last-child a {
+.nav li:first-child a {
   color: #f06c64;
 }
 
-.nav li:last-child a:hover {
+.nav li:first-child a:hover {
   color: #f2f2f2;
 }
 
@@ -115,14 +127,12 @@ slider section
 =========================
 */
 .slider {
-  background-color: #f06c64;
-
   padding-right: 40px;
   padding-left: 40px;
-
-  border-bottom: solid 6px #ea676b;
-
   height: 600px;
+  
+  border-bottom: solid 6px #ea676b;
+  background-color: #f06c64;
 }
 
 .slider-container {
@@ -130,107 +140,106 @@ slider section
 }
 
 .slider-container .previous {
-  cursor: pointer;
   position: absolute;
   top: 281px;
   left: 0;
+
+  cursor: pointer;
 }
 
 .slider-container .next {
-  cursor: pointer;
   position: absolute;
   top: 281px;
   right: 0;
+
+  cursor: pointer;
 }
 
 .vertical-iphone {
   position: relative;
-  width: fit-content;
   top: 52px;
   left: 70px;
+
+  width: 1px;
 }
 
 .vertical-iphone .screen {
-  background-image: url("./assets/img/slider/vertical-iphone-image.png");
   position: absolute;
   left: 15px;
   top: 65px;
-
+  z-index: 100;
+  
   width: 190px;
   height: 335px;
-
-  z-index: 100;
+  
+  background-image: url("./assets/img/slider/vertical-iphone-image.png");
 }
 
 .vertical-iphone .phone {
-  background-image: url("./assets/img/slider/iphone-vertical.png");
-
   position: absolute;
   top: 0;
   left: 0;
-
+  z-index: 50;
+  
   width: 218px;
   height: 458px;
 
-  z-index: 50;
+  background-image: url("./assets/img/slider/iphone-vertical.png");
 }
 
 .vertical-iphone .shadow {
-  background-image: url("./assets/img/slider/vertical-shadow.png");
-
   position: absolute;
   top: 1px;
   left: 2px;
-
+  z-index: 10;
+  
   width: 240px;
   height: 482px;
-
-  z-index: 10;
+  
+  background-image: url("./assets/img/slider/vertical-shadow.png");
 }
 
 .horizontal-iphone {
   position: relative;
-  width: fit-content;
   top: 173px;
   left: 384px;
+  width: 1px;
 }
 
 .horizontal-iphone .screen {
-  background-image: url("./assets/img/slider/horizontal-iphone-image.png");
   position: absolute;
   top: 15px;
   left: 61px;
-
+  z-index: 100;
+  
   height: 188px;
   width: 333px;
-
-  z-index: 100;
+  
+  background-image: url("./assets/img/slider/horizontal-iphone-image.png");
 }
 
 .horizontal-iphone .phone {
   position: absolute;
   top: 0;
   left: 0;
-
-  background-image: url("./assets/img/slider/iphone-horizontal.png");
-
+  z-index: 50;
+  
   height: 218px;
   width: 458px;
-
-  z-index: 50;
+  
+  background-image: url("./assets/img/slider/iphone-horizontal.png");
 }
 
 .horizontal-iphone .shadow {
-  background-image: url("./assets/img/slider/horizontal-shadow.png");
-
   position: absolute;
   top: 1px;
   left: 2px;
-
+  z-index: 10;
+  
   height: 240px;
   width: 483px;
-
-  z-index: 10;
+  
+  background-image: url("./assets/img/slider/horizontal-shadow.png");
 }
 
 /* 
@@ -239,15 +248,13 @@ services section
 =========================
 */
 .services {
-  background-color: #f2f2f2;
-
   height: 500px;
-
   padding-top: 63px;
   padding-right: 40px;
   padding-left: 40px;
-
+  
   border-bottom: solid 6px #fff;
+  background-color: #f2f2f2;
 }
 
 .services .description {
@@ -256,6 +263,7 @@ services section
 
 .services .description h2 {
   padding-bottom: 21px;
+
   font-weight: bold;
   font-size: 30px;
   color: #666d89;
@@ -269,8 +277,12 @@ services section
   letter-spacing: -0.08px;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .service-item {
-  float: left;
   width: 32%;
   margin-left: 18px;
   margin-bottom: 29px;
@@ -281,19 +293,21 @@ services section
 }
 
 .service-item .icon {
-  width: 25%;
-  margin-top: 5px;
   float: left;
+  width: 25%;
+
+  margin-top: 4px;
 }
 
 .service-item .text {
-  padding-left: 5px;
-  width: 75%;
   float: left;
+  width: 75%;
+  padding-left: 5px;
 }
 
 .service-item div h3 {
   padding-bottom: 14px;
+  
   font-size: 18px;
   font-weight: bold;
   color: #666d89;
