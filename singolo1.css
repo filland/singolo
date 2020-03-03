@@ -23,15 +23,15 @@ ul {
 /* for EDGE browser */
 
 h1 {
-  font-size: 1.6rem;
+  font-size: 1.6rem !important;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 
 a {
@@ -74,6 +74,7 @@ navigation bar
   color: #f2f2f2;
   letter-spacing: -0.8px;
   text-transform: uppercase;
+  font-weight: 400;
 }
 
 .nav h1 span {
@@ -249,7 +250,7 @@ services section
 */
 .services {
   height: 500px;
-  padding-top: 63px;
+  padding-top: 65px;
   padding-right: 40px;
   padding-left: 40px;
   
@@ -262,7 +263,7 @@ services section
 }
 
 .services .description h2 {
-  padding-bottom: 21px;
+  padding-bottom: 25px;
 
   font-weight: bold;
   font-size: 30px;
@@ -306,7 +307,7 @@ services section
 }
 
 .service-item div h3 {
-  padding-bottom: 14px;
+  padding-bottom: 12px;
   
   font-size: 18px;
   font-weight: bold;
@@ -318,4 +319,8 @@ services section
   line-height: 21px;
   font-size: 12px;
   text-align: justify;
+}
+
+.flex-container:nth-child(n + 2) .service-item h3{
+  padding-bottom: 10px;
 }

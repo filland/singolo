@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box !important;
+}
+
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #f0d8d9;
+}
+
+.main {
+  width: 1020px;
+  margin: auto;
+}
+
+.content {
+  padding-top: 67px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 11px;
+  border-bottom: solid 6px #ea676b;
+  background-color: #f06c64;
+  color: #f0d8d9;
+}
+
+.content h1 {
+  margin-top: 0;
+  margin-bottom: 29px !important;
+
+  font-size: 30px !important;
+  line-height: 18px;
+  font-weight: 900;
+}
+
+.content > p {
+  margin-top: 0;
+  margin-bottom: 43px !important;
+  font-size: 18px !important;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.quote {
+  display: flex;
+}
+
+.quote .form {
+  display: flex;
+  flex-flow: column;
+  width: 618px;
+  margin-right: 22px;
+}
+
+.quote .form input, textarea {
+  display: block;
+  border: none;
+  border-radius: 7px;
+  padding-left: 14px !important;
+  padding: 12px;
+  margin-bottom: 16px;
+
+  background-color: #d6564f;
+  color: #f48c8f;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.quote .form textarea {
+  resize: none;
+  height: 202px;
+}
+
+.quote .form input::placeholder,
+textarea::placeholder {
+  color: #f48c8f;
+}
+
+.quote .form input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #f48c8f;
+}
+
+.quote .form input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #f48c8f;
+}
+
+.quote .form button {
+  margin-left: auto;
+  padding: 0;
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  color: #f0d8d9;
+  background-color: #d6564f;
+  cursor: pointer;
+}
+
+.quote .form button:hover {
+  background-color: #b93d36;
+}
+
+.quote .info {
+  flex: 1;
+}
+
+.quote .info h3 {
+  margin-top: 0;
+  margin-bottom: 10px !important;
+  font-weight: 900;
+  font-size: 18px !important;
+  line-height: 18px;
+}
+
+.quote .info p {
+  margin-bottom: 20px !important;
+}
+
+.quote .info p, div {
+  line-height: 22px;
+  font-size: 12px !important;
+  font-weight: 400;
+}
+
+.quote .info div > div {
+  display: inline-block;
+  margin-right: 10px;
+  width: 10px;
+  text-align: end;
+}
+
+.quote .info a {
+  font-size: 12px !important;
+}
+
+footer {
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 76px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #2d303a;
+}
+
+footer span {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #666d89;
+}
+
+footer div {
+  text-align: end;
+  margin-top: 21px;
+}
+
+footer div img {
+  margin-left: 3px;
+  cursor: pointer;
+}
