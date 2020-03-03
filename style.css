@@ -158,7 +158,7 @@ a {
 .slider-container .previous {
   position: absolute;
   top: 281px;
-  left: 0;
+  left: 2px;
 
   cursor: pointer;
 }
@@ -198,7 +198,7 @@ a {
   z-index: 50;
 
   width: 218px;
-  height: 458px;
+  height: 459px;
 
   background-image: url("./assets/img/slider/iphone-vertical.png");
 }
@@ -241,7 +241,7 @@ a {
   z-index: 50;
 
   height: 218px;
-  width: 458px;
+  width: 459px;
 
   background-image: url("./assets/img/slider/iphone-horizontal.png");
 }
@@ -265,7 +265,7 @@ a {
   */
 .services {
   height: 500px;
-  padding-top: 65px;
+  padding-top: 66px;
   padding-right: 40px;
   padding-left: 40px;
 
@@ -356,7 +356,7 @@ h2 {
 }
 
 .portfolio {
-  padding-top: 64px !important;
+  padding-top: 63px !important;
   padding-left: 40px !important;
   padding-right: 40px !important;
   padding-bottom: 47px !important;
@@ -421,7 +421,7 @@ h2 {
   padding-left: 40px !important;
   padding-right: 40px !important;
   padding-top: 68px !important;
-  padding-bottom: 46px !important;
+  padding-bottom: 47px !important;
   border-bottom: 6px solid #fff;
   background-color: #f2f2f2;
   color: #767e9e;
@@ -434,7 +434,7 @@ h2 {
 }
 
 .about p {
-  margin-bottom: 45px !important;
+  margin-bottom: 46px !important;
   font-size: 18px;
   font-weight: 300;
   line-height: 30px;
@@ -451,7 +451,7 @@ h2 {
 
 .about .person img {
   width: 300px;
-  margin-bottom: 12px !important;
+  margin-bottom: 11px !important;
 }
 
 .about .person h4 {
@@ -535,8 +535,7 @@ a {
   margin-right: 22px;
 }
 
-.quote .form input,
-textarea {
+.quote .form input, textarea {
   display: block;
   border: none;
   border-radius: 7px;
