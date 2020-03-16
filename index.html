@@ -13,40 +13,44 @@
 
 <header class="nav fixed-width">
     <h1>SINGOLO<span>*</span></h1>
-    <ul>
+    <ul id="nav-sections-list">
         <li><a href="#">home</a></li>
         <li class="menu-dot"><span>·</span></li>
-        <li><a href="#">services</a></li>
+        <li><a href="#services">services</a></li>
         <li class="menu-dot"><span>·</span></li>
-        <li><a href="#">portfolio</a></li>
+        <li><a href="#portfolio">portfolio</a></li>
         <li class="menu-dot"><span>·</span></li>
-        <li><a href="#">about</a></li>
+        <li><a href="#about">about</a></li>
         <li class="menu-dot"><span>·</span></li>
-        <li><a href="#">contact</a></li>
+        <li><a href="#contact">contact</a></li>
     </ul>
 </header>
 <section class="slider fixed-width">
     <div class="slider-container">
-        <div class="previous">
-            <img src="./assets/img/slider/previous.png" alt="prevous button">
+        <div class="slider-item">
+            <div class="vertical-iphone">
+                <div class="screen" id="vertical-iphone-screen-id"></div>
+                <div class="phone"></div>
+                <div class="shadow"></div>
+            </div>
+            <div class="horizontal-iphone">
+                <div class="screen" id="horizontal-iphone-screen-id"></div>
+                <div class="phone"></div>
+                <div class="shadow"></div>
+            </div>
         </div>
-
-        <div class="vertical-iphone">
-            <div class="screen"></div>
-            <div class="phone"></div>
-            <div class="shadow"></div>
-        </div>
-        <div class="horizontal-iphone">
-            <div class="screen"></div>
-            <div class="phone"></div>
-            <div class="shadow"></div>
-        </div>
-        <div class="next">
-            <img src="./assets/img/slider/next.png" alt="next button">
+        <div class="slider-item">
+            <img src="./assets/img/slider/Slide-2.png" alt="slider 2">
         </div>
     </div>
+    <div id="previousSlide" class="previous">
+        <img src="./assets/img/slider/previous.png" alt="prevous button">
+    </div>
+    <div id="nextSlide" class="next">
+        <img src="./assets/img/slider/next.png" alt="next button">
+    </div>
 </section>
-<section class="services fixed-width clearfix">
+<section class="services fixed-width clearfix" id="services">
     <div class="description">
         <h2>Our Services</h2>
         <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
@@ -111,7 +115,7 @@
     </div>
 </section>
 <div class="main">
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <h2>Portfolio</h2>
         <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
         <ul>
@@ -135,7 +139,7 @@
             <img src="./assets/img/singolo2/portfolio/p12.png">
         </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
         <h2>About Us</h2>
         <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
             erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
@@ -181,17 +185,17 @@
     </section>
 </div>
 <div class="main">
-    <section class="content">
+    <section class="content" id="contact">
         <h1>Get a Quote</h1>
         <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
             erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
             mauris condimentum nibh.</p>
         <section class="quote">
-            <form class="form" action="#" method="POST">
-                <input type="text" placeholder="Name (Required)" required>
-                <input type="email" placeholder="Email (Required)" required>
-                <input type="text" placeholder="Subject">
-                <textarea placeholder="Describe your project in detail..."></textarea>
+            <form class="form" id="contact-form-id" action="#" method="POST">
+                <input id="contact-name" type="text" placeholder="Name (Required)" required>
+                <input id="contact-email" type="email" placeholder="Email (Required)" required>
+                <input id="contact-subject" type="text" placeholder="Subject">
+                <textarea id="contact-description" placeholder="Describe your project in detail..."></textarea>
                 <button type="submit">Submit</button>
             </form>
             <div class="info">
@@ -231,6 +235,16 @@
         </div>
     </footer>
 </div>
+<div id="dialog-window-id" class="dialog-window-container">
+    <div class="dialog-window">
+        <span>Your message was sent.</span>
+        <span id="subj"></span>
+        <span id="desc"></span>
+        <button id="dialog-ok-button">OK</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 
 </html>
