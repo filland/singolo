@@ -155,10 +155,6 @@ a {
   text-transform: uppercase;
 }
 
-.nav-sections-container li a:hover {
-  /* color: #f06c64; */
-}
-
 .nav-sections-container .menu-dot {
   padding-left: 13px;
   padding-right: 14px;
@@ -216,10 +212,10 @@ a {
 
 .vertical-iphone {
   position: relative;
-  /* top: 52px; */
-  top: 12%;
-  /* left: 110px; */
-  left: 8.8%;
+  top: 52px;
+  /* top: 12%; */
+  left: 110px;
+  /* left: 8.8%; */
 }
 
 .vertical-iphone .screen {
@@ -564,7 +560,8 @@ h2 {
   margin-right: 22px;
 }
 
-.quote .form input, textarea {
+.quote .form input,
+textarea {
   display: block;
   border: none;
   border-radius: 7px;
@@ -729,30 +726,8 @@ footer div img {
   }
 
   /* Slider */
-  .slider {
-    height: fit-content;
-  }
-  .slider-container {
-    width: 100%;
-  }
-  .slider-item {
-    flex: 0 0 100%;
-  }
-  .slider-item > img {
-    width: 100%;
-    display: block;
-  }
-  .vertical-iphone {
-    /* top: 1%; */
-    /* left: 8.8%; */
-  }
-  .horizontal-iphone {
-    /* top: 20%; */
-    /* left: 32.6%; */
-  }
-  .vertical-iphone > *,
-  .horizontal-iphone > * {
-    transform: scale(0.75);
+  .scaled-slider {
+    transform-origin: top left;
   }
 
   /* Our services */
@@ -768,12 +743,13 @@ footer div img {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
-    grid-gap: 4vw;
+    grid-gap: 2vw;
   }
   .portfolio .images img {
-    width: 100%;
+    display: block;
+    width: 29vw;
+    height: 29vw;
     margin-bottom: 0;
-    /* padding: 4%; */
   }
 
   /* About Us */
@@ -792,8 +768,6 @@ footer div img {
     width: 80%;
   }
 }
-
-
 
 @media (max-width: 768px) {
   /* header */
@@ -816,7 +790,7 @@ footer div img {
     transition: cubic-bezier(0.895, 0.03, 0.685, 0.22);
     transition-duration: 200ms;
   }
-  .nav-left-part h1 { 
+  .nav-left-part h1 {
     margin-right: 35%;
   }
   .nav-sections-container {
@@ -843,7 +817,6 @@ footer div img {
     display: none;
   }
 
-
   /* Our services */
   .grid-container {
     grid-template-columns: 95%;
@@ -852,6 +825,11 @@ footer div img {
   /* Portfolio */
   .portfolio .images {
     grid-template-columns: auto auto;
+    /* grid-column-gap: 3%; */
+  }
+  .portfolio .images img {
+    height: 40vw;
+    width: 100%;
   }
   /* hide images after the 8th image */
   .portfolio .images img:nth-child(1n + 9) {
