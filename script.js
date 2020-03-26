@@ -1,3 +1,6 @@
+const FULL_SCREEN_WIDHT = 1020;
+const MID_SCREEN_WIDTH = 768;
+
 // nav
 // select nav menu
 let navItems = document.querySelectorAll(
@@ -22,16 +25,12 @@ let burgerMenuDisplayed = false;
 let displayWidth = document.body.clientWidth;
 
 function displayNavSectionContinaer() {
-  if (displayWidth <= 768) {
+  if (displayWidth <= MID_SCREEN_WIDTH) {
     navSectionsContainer.style.display = "none";
   } else {
-    resetMenu();
+    burgerMenuDisplayed = false;
+    navSectionsContainer.style.display = "block";
   }
-}
-
-function resetMenu() {
-  burgerMenuDisplayed = false;
-  navSectionsContainer.style.display = "block";
 }
 
 displayNavSectionContinaer();
@@ -40,12 +39,11 @@ window.addEventListener("resize", event => {
   if (displayWidth != document.body.clientWidth) {
     displayWidth = document.body.clientWidth;
 
-    if (displayWidth <= 768 && !burgerMenuDisplayed) {
+    if (displayWidth <= MID_SCREEN_WIDTH && !burgerMenuDisplayed) {
       showBurderMenuLabel.style.transform = "";
       showBurderMenuLabel.style.display = "block";
       navSectionsContainer.style.display = "none";
-    } else if (displayWidth > 768) {
-
+    } else if (displayWidth > MID_SCREEN_WIDTH) {
       burgerBackground.style.display = "none";
       showBurderMenuLabel.style.transform = "";
       showBurderMenuLabel.style.display = "none";
@@ -56,8 +54,7 @@ window.addEventListener("resize", event => {
 });
 
 showBurderMenuLabel.addEventListener("click", () => {
-  if (displayWidth >= 768) {
-    
+  if (displayWidth >= MID_SCREEN_WIDTH) {
   } else {
     if (burgerMenuDisplayed) {
       navLeftPart.style.width = "auto";
@@ -77,15 +74,43 @@ showBurderMenuLabel.addEventListener("click", () => {
 
 //  ==========================================================================
 // slider
-const slider = document.querySelector(".slider-container");
+const slider = document.querySelector(".slider");
+const sliderContainer = document.querySelector(".slider-container");
 const sliderItems = document.querySelectorAll(".slider-item");
+const scaledSlider = document.querySelector(".scaled-slider");
 
 let counter = 0;
-const size = sliderItems[0].clientWidth;
+let size = sliderItems[0].clientWidth;
 transitionSlide();
 
+let initialSliderHeight = -1;
+
+function scaleSlider() {
+  if (document.body.clientWidth < FULL_SCREEN_WIDHT) {
+    let scale = document.body.clientWidth / FULL_SCREEN_WIDHT;
+    scaledSlider.style.transform = "scale(" + scale + ")";
+    slider.style.height = sliderItems[0].getBoundingClientRect().height + "px";
+  } else {
+    if (initialSliderHeight === -1) {
+      initialSliderHeight = slider.scrollHeight;
+      console.log("init height = " + initialSliderHeight);
+    }
+    // remove scaling and set initial height
+    scaledSlider.style.transform = "";
+    console.log("settings init height = " + initialSliderHeight);
+
+    slider.style.height = initialSliderHeight;
+  }
+}
+
+scaleSlider();
+
+window.addEventListener("resize", e => {
+  scaleSlider();
+});
+
 function transitionSlide() {
-  slider.style.transform = "translateX(" + -size * counter + "px)";
+  sliderContainer.style.transform = "translateX(" + -size * counter + "px)";
 }
 
 function changeCurrentItem(n) {
@@ -94,10 +119,13 @@ function changeCurrentItem(n) {
 
 const nextSlide = document.getElementById("nextSlide");
 nextSlide.addEventListener("click", e => {
+  size = sliderItems[0].clientWidth;
+  console.log("next " + size);
   if (counter === 1) {
-    slider.style.transform = "translateX(" + 2 * -size * counter + "px)";
+    sliderContainer.style.transform =
+      "translateX(" + 2 * -size * counter + "px)";
   } else {
-    slider.style.transition = "transform 0.4s ease-in-out";
+    sliderContainer.style.transition = "transform 0.4s ease-in-out";
   }
   changeCurrentItem(counter + 1);
   transitionSlide();
@@ -105,7 +133,9 @@ nextSlide.addEventListener("click", e => {
 
 const previousSlide = document.getElementById("previousSlide");
 previousSlide.addEventListener("click", e => {
-  slider.style.transition = "transform 0.4s ease-in-out";
+  size = sliderItems[0].clientWidth;
+  console.log("prev " + size);
+  sliderContainer.style.transition = "transform 0.4s ease-in-out";
   changeCurrentItem(counter - 1);
   transitionSlide();
 });
@@ -125,11 +155,9 @@ document.body.addEventListener("click", e => {
     if (verticalPhoneTurnedOn) {
       screen.style.display = "none";
       verticalPhoneTurnedOn = false;
-      console.log("hide");
     } else {
       screen.style.display = "block";
       verticalPhoneTurnedOn = true;
-      console.log("show");
     }
   }
 
