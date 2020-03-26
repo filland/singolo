@@ -12,18 +12,27 @@
 </head>
 
 <header class="nav fixed-width">
-    <h1>SINGOLO<span>*</span></h1>
-    <ul id="nav-sections-list">
-        <li><a href="#">home</a></li>
-        <li class="menu-dot"><span>·</span></li>
-        <li><a href="#services">services</a></li>
-        <li class="menu-dot"><span>·</span></li>
-        <li><a href="#portfolio">portfolio</a></li>
-        <li class="menu-dot"><span>·</span></li>
-        <li><a href="#about">about</a></li>
-        <li class="menu-dot"><span>·</span></li>
-        <li><a href="#contact">contact</a></li>
-    </ul>
+    <div class="nav-container">
+        <div class="nav-left-part">
+            <label id="burderMenuLabelId" for="toggle">&#9776;</label>
+            <input type="checkbox" id="toggle" />
+            <h1>SINGOLO<span>*</span></h1>
+        </div>
+        <div class="nav-sections-container">
+            <ul id="nav-sections-list">
+                <li><a href="#">home</a></li>
+                <li class="menu-dot"><span>·</span></li>
+                <li><a href="#services">services</a></li>
+                <li class="menu-dot"><span>·</span></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li class="menu-dot"><span>·</span></li>
+                <li><a href="#about">about</a></li>
+                <li class="menu-dot"><span>·</span></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <span class="burger-backgroud"></span>
 </header>
 <section class="slider fixed-width">
     <div class="slider-container">
@@ -57,7 +66,7 @@
             erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
             mauris condimentum nibh.</p>
     </div>
-    <div class="flex-container">
+    <div class="grid-container">
         <div class="service-item">
             <div class="icon"><img src="./assets/img/services/pen.png" alt="pen icon"></div>
             <div class="text">
@@ -85,8 +94,6 @@
                     condimentum.</p>
             </div>
         </div>
-    </div>
-    <div class="flex-container">
         <div class="service-item">
             <div class="icon"><img src="./assets/img/services/phone.png" alt="phone icon"></div>
             <div class="text">
@@ -114,127 +121,124 @@
         </div>
     </div>
 </section>
-<div class="main">
-    <section class="portfolio" id="portfolio">
-        <h2>Portfolio</h2>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-        <ul>
-            <li>All</li>
-            <li>Web Design</li>
-            <li>Graphic Design</li>
-            <li>Artwork</li>
-        </ul>
-        <div class="images">
-            <img src="./assets/img/singolo2/portfolio/p1.png">
-            <img src="./assets/img/singolo2/portfolio/p2.png">
-            <img src="./assets/img/singolo2/portfolio/p3.png">
-            <img src="./assets/img/singolo2/portfolio/p4.png">
-            <img src="./assets/img/singolo2/portfolio/p5.png">
-            <img src="./assets/img/singolo2/portfolio/p6.png">
-            <img src="./assets/img/singolo2/portfolio/p7.png">
-            <img src="./assets/img/singolo2/portfolio/p8.png">
-            <img src="./assets/img/singolo2/portfolio/p9.png">
-            <img src="./assets/img/singolo2/portfolio/p10.png">
-            <img src="./assets/img/singolo2/portfolio/p11.png">
-            <img src="./assets/img/singolo2/portfolio/p12.png">
+<section class="portfolio fixed-width" id="portfolio">
+    <h2>Portfolio</h2>
+    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+    <ul>
+        <li>All</li>
+        <li>Web Design</li>
+        <li>Graphic Design</li>
+        <li>Artwork</li>
+    </ul>
+    <div class="images">
+        <img src="./assets/img/singolo2/portfolio/p1.png">
+        <img src="./assets/img/singolo2/portfolio/p2.png">
+        <img src="./assets/img/singolo2/portfolio/p3.png">
+        <img src="./assets/img/singolo2/portfolio/p4.png">
+        <img src="./assets/img/singolo2/portfolio/p5.png">
+        <img src="./assets/img/singolo2/portfolio/p6.png">
+        <img src="./assets/img/singolo2/portfolio/p7.png">
+        <img src="./assets/img/singolo2/portfolio/p8.png">
+        <img src="./assets/img/singolo2/portfolio/p9.png">
+        <img src="./assets/img/singolo2/portfolio/p10.png">
+        <img src="./assets/img/singolo2/portfolio/p11.png">
+        <img src="./assets/img/singolo2/portfolio/p12.png">
+    </div>
+</section>
+<section class="about fixed-width" id="about">
+    <h2>About Us</h2>
+    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
+        erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
+        mauris condimentum nibh.</p>
+    <div class="people">
+        <div class="person">
+            <img src="./assets/img/singolo2/about/person1.png" alt="person 1">
+            <h4>Adam Jensen</h4>
+            <p>Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id
+                lorem.</p>
+            <ul>
+                <li><img src="./assets/img/singolo2/about/facebook.png" alt="facebook"></li>
+                <li><img src="./assets/img/singolo2/about/google-plus.png" alt="google-plus"></li>
+                <li><img src="./assets/img/singolo2/about/twitter.png" alt="twitter"></li>
+                <li><img src="./assets/img/singolo2/about/linkedin.png" alt="linkedin"></li>
+            </ul>
         </div>
-    </section>
-    <section class="about" id="about">
-        <h2>About Us</h2>
-        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
-            erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
-            mauris condimentum nibh.</p>
-        <div class="people">
-            <div class="person">
-                <img src="./assets/img/singolo2/about/person1.png" alt="person 1">
-                <h4>Adam Jensen</h4>
-                <p>Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id
-                    lorem.</p>
-                <ul>
-                    <li><img src="./assets/img/singolo2/about/facebook.png" alt="facebook"></li>
-                    <li><img src="./assets/img/singolo2/about/google-plus.png" alt="google-plus"></li>
-                    <li><img src="./assets/img/singolo2/about/twitter.png" alt="twitter"></li>
-                    <li><img src="./assets/img/singolo2/about/linkedin.png" alt="linkedin"></li>
-                </ul>
-            </div>
-            <div class="person">
-                <img src="./assets/img/singolo2/about/person2.png" alt="person 2">
-                <h4>Desmond Miles</h4>
-                <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices
-                    velit.</p>
-                <ul>
-                    <li><img src="./assets/img/singolo2/about/facebook.png" alt="facebook"></li>
-                    <li><img src="./assets/img/singolo2/about/google-plus.png" alt="google-plus"></li>
-                    <li><img src="./assets/img/singolo2/about/twitter.png" alt="twitter"></li>
-                    <li><img src="./assets/img/singolo2/about/linkedin.png" alt="linkedin"></li>
-                </ul>
-            </div>
-            <div class="person">
-                <img src="./assets/img/singolo2/about/person3.png" alt="person 3">
-                <h4>Scolara Visari</h4>
-                <p>Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque
-                    condimentum.</p>
-                <ul>
-                    <li><img src="./assets/img/singolo2/about/facebook.png" alt="facebook"></li>
-                    <li><img src="./assets/img/singolo2/about/google-plus.png" alt="google-plus"></li>
-                    <li><img src="./assets/img/singolo2/about/twitter.png" alt="twitter"></li>
-                    <li><img src="./assets/img/singolo2/about/linkedin.png" alt="linkedin"></li>
-                </ul>
-            </div>
+        <div class="person">
+            <img src="./assets/img/singolo2/about/person2.png" alt="person 2">
+            <h4>Desmond Miles</h4>
+            <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices
+                velit.</p>
+            <ul>
+                <li><img src="./assets/img/singolo2/about/facebook.png" alt="facebook"></li>
+                <li><img src="./assets/img/singolo2/about/google-plus.png" alt="google-plus"></li>
+                <li><img src="./assets/img/singolo2/about/twitter.png" alt="twitter"></li>
+                <li><img src="./assets/img/singolo2/about/linkedin.png" alt="linkedin"></li>
+            </ul>
         </div>
-    </section>
-</div>
-<div class="main">
-    <section class="content" id="contact">
-        <h1>Get a Quote</h1>
-        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
-            erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
-            mauris condimentum nibh.</p>
-        <section class="quote">
-            <form class="form" id="contact-form-id" action="#" method="POST">
-                <input id="contact-name" type="text" placeholder="Name (Required)" required>
-                <input id="contact-email" type="email" placeholder="Email (Required)" required>
-                <input id="contact-subject" type="text" placeholder="Subject">
-                <textarea id="contact-description" placeholder="Describe your project in detail..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-            <div class="info">
-                <h3>Contact Information</h3>
-                <p>
-                    Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.
-                    Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet
-                    turpis, et consequat felis.
-                </p>
+        <div class="person">
+            <img src="./assets/img/singolo2/about/person3.png" alt="person 3">
+            <h4>Scolara Visari</h4>
+            <p>Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque
+                condimentum.</p>
+            <ul>
+                <li><img src="./assets/img/singolo2/about/facebook.png" alt="facebook"></li>
+                <li><img src="./assets/img/singolo2/about/google-plus.png" alt="google-plus"></li>
+                <li><img src="./assets/img/singolo2/about/twitter.png" alt="twitter"></li>
+                <li><img src="./assets/img/singolo2/about/linkedin.png" alt="linkedin"></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="content fixed-width" id="contact">
+    <h1>Get a Quote</h1>
+    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
+        erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
+        mauris condimentum nibh.</p>
+    <section class="quote">
+        <form class="form" id="contact-form-id" action="#" method="POST">
+            <input id="contact-name" type="text" placeholder="Name (Required)" required>
+            <input id="contact-email" type="email" placeholder="Email (Required)" required>
+            <input id="contact-subject" type="text" placeholder="Subject">
+            <textarea id="contact-description" placeholder="Describe your project in detail..."></textarea>
+            <button type="submit">SEND</button>
+        </form>
+        <div class="info">
+            <h3>Contact Information</h3>
+            <p>
+                Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.
+                Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet
+                turpis, et consequat felis.
+            </p>
+            <div>
                 <div>
-                    <div>
-                        <img src="./assets/img/singolo3/location.png" alt="location">
-                    </div>
-                    Elm St. 14/05 Lost City
+                    <img src="./assets/img/singolo3/location.png" alt="location">
                 </div>
-                <div>
-                    <div><img src="./assets/img/singolo3/phone.png" alt="phone"></div>
-                    <a href="tel:035283318635">03528 331 86 35</a>
-                </div>
+                Elm St. 14/05 Lost City
+            </div>
+            <div>
+                <div><img src="./assets/img/singolo3/phone.png" alt="phone"></div>
+                <a href="tel:035283318635">03528 331 86 35</a>
+            </div>
 
+            <div>
                 <div>
-                    <div>
-                        <img src="./assets/img/singolo3/mail.png" alt="email">
-                    </div>
-                    <a href="mailto:info@singolo.com">info@singolo.com</a>
+                    <img src="./assets/img/singolo3/mail.png" alt="email">
                 </div>
+                <a href="mailto:info@singolo.com">info@singolo.com</a>
             </div>
-        </section>
-    </section>
-    <footer>
-        <span>© Copyright 2013 · by PSDchat.com</span>
-        <div>
-            <img src="./assets/img/singolo3/facebook.png" alt="facebook">
-            <img src="./assets/img/singolo3/google-plus.png" alt="google-plus">
-            <img src="./assets/img/singolo3/twitter.png" alt="twitter">
-            <img src="./assets/img/singolo3/linkedin.png" alt="linkedin">
         </div>
-    </footer>
-</div>
+    </section>
+</section>
+<footer class="fixed-width">
+    <span>© Copyright 2013</span>
+    <div>
+        <img src="./assets/img/singolo3/facebook.png" alt="facebook">
+        <img src="./assets/img/singolo3/google-plus.png" alt="google-plus">
+        <img src="./assets/img/singolo3/twitter.png" alt="twitter">
+        <img src="./assets/img/singolo3/linkedin.png" alt="linkedin">
+    </div>
+</footer>
+</span>
 <div id="dialog-window-id" class="dialog-window-container">
     <div class="dialog-window">
         <span>Your message was sent.</span>

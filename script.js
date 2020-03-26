@@ -1,3 +1,4 @@
+// nav
 // select nav menu
 let navItems = document.querySelectorAll(
   "#nav-sections-list > li:not(.menu-dot)"
@@ -11,6 +12,68 @@ navItems.forEach(item => {
   });
 });
 
+// burger menu
+const burgerBackground = document.querySelector(".burger-backgroud");
+const showBurderMenuLabel = document.getElementById("burderMenuLabelId");
+const navLeftPart = document.querySelector(".nav-left-part");
+const navSectionsContainer = document.querySelector(".nav-sections-container");
+
+let burgerMenuDisplayed = false;
+let displayWidth = document.body.clientWidth;
+
+function displayNavSectionContinaer() {
+  if (displayWidth <= 768) {
+    navSectionsContainer.style.display = "none";
+  } else {
+    resetMenu();
+  }
+}
+
+function resetMenu() {
+  burgerMenuDisplayed = false;
+  navSectionsContainer.style.display = "block";
+}
+
+displayNavSectionContinaer();
+
+window.addEventListener("resize", event => {
+  if (displayWidth != document.body.clientWidth) {
+    displayWidth = document.body.clientWidth;
+
+    if (displayWidth <= 768 && !burgerMenuDisplayed) {
+      showBurderMenuLabel.style.transform = "";
+      showBurderMenuLabel.style.display = "block";
+      navSectionsContainer.style.display = "none";
+    } else if (displayWidth > 768) {
+
+      burgerBackground.style.display = "none";
+      showBurderMenuLabel.style.transform = "";
+      showBurderMenuLabel.style.display = "none";
+      burgerMenuDisplayed = false;
+      navSectionsContainer.style.display = "block";
+    }
+  }
+});
+
+showBurderMenuLabel.addEventListener("click", () => {
+  if (displayWidth >= 768) {
+    
+  } else {
+    if (burgerMenuDisplayed) {
+      navLeftPart.style.width = "auto";
+      burgerBackground.style.display = "none";
+      burgerMenuDisplayed = false;
+      showBurderMenuLabel.style.transform = "";
+      navSectionsContainer.style.display = "none";
+    } else {
+      navLeftPart.style.width = "250px";
+      burgerBackground.style.display = "block";
+      showBurderMenuLabel.style.transform = "rotate(-90deg)";
+      burgerMenuDisplayed = true;
+      navSectionsContainer.style.display = "block";
+    }
+  }
+});
 
 //  ==========================================================================
 // slider
@@ -22,7 +85,7 @@ const size = sliderItems[0].clientWidth;
 transitionSlide();
 
 function transitionSlide() {
-  slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+  slider.style.transform = "translateX(" + -size * counter + "px)";
 }
 
 function changeCurrentItem(n) {
@@ -31,8 +94,8 @@ function changeCurrentItem(n) {
 
 const nextSlide = document.getElementById("nextSlide");
 nextSlide.addEventListener("click", e => {
-  if(counter === 1) {
-    slider.style.transform = 'translateX(' + (2 * (-size) * counter) + 'px)';
+  if (counter === 1) {
+    slider.style.transform = "translateX(" + 2 * -size * counter + "px)";
   } else {
     slider.style.transition = "transform 0.4s ease-in-out";
   }
@@ -46,7 +109,6 @@ previousSlide.addEventListener("click", e => {
   changeCurrentItem(counter - 1);
   transitionSlide();
 });
-
 
 //  ==========================================================================
 // vertical and horizontal phone screens
@@ -108,47 +170,45 @@ portfolioTopics.forEach(topic => {
   });
 });
 
-
 //  ==========================================================================
 // select image
 images.forEach(img => {
-
-    img.addEventListener("click", e => {
-        images.forEach(img => img.classList.remove("portfolio-image-selected"));
-        img.classList.add("portfolio-image-selected");
-    });
+  img.addEventListener("click", e => {
+    images.forEach(img => img.classList.remove("portfolio-image-selected"));
+    img.classList.add("portfolio-image-selected");
+  });
 });
-
 
 //  ==========================================================================
 // handle contanct form submission
 let contactForm = document.getElementById("contact-form-id");
 contactForm.addEventListener("submit", e => {
-    e.preventDefault();
-    e.stopPropagation();
+  e.preventDefault();
+  e.stopPropagation();
 
-    let subject = document.getElementById("contact-subject");
-    let description = document.getElementById("contact-description");
+  let subject = document.getElementById("contact-subject");
+  let description = document.getElementById("contact-description");
 
-    if(subject.value) {
-        document.getElementById("subj").innerText = "Subject: " + subject.value;
-    }
-    
-    if(description.value) {
-        document.getElementById("desc").innerText = "Description: " + description.value;
-    }
+  if (subject.value) {
+    document.getElementById("subj").innerText = "Subject: " + subject.value;
+  }
 
-    showDialog();
-})
+  if (description.value) {
+    document.getElementById("desc").innerText =
+      "Description: " + description.value;
+  }
+
+  showDialog();
+});
 document.getElementById("dialog-ok-button").addEventListener("click", e => {
-    hideDialog();
+  hideDialog();
 });
 function showDialog() {
-    document.querySelector(".dialog-window-container").style.display = 'flex';
+  document.querySelector(".dialog-window-container").style.display = "flex";
 }
 function hideDialog() {
-    let el = document.querySelector(".dialog-window-container");
-    el.style.display = 'none';
-    document.getElementById("subj").innerText = "";
-    document.getElementById("desc").innerText = "";
+  let el = document.querySelector(".dialog-window-container");
+  el.style.display = "none";
+  document.getElementById("subj").innerText = "";
+  document.getElementById("desc").innerText = "";
 }
