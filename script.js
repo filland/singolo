@@ -93,12 +93,9 @@ function scaleSlider() {
   } else {
     if (initialSliderHeight === -1) {
       initialSliderHeight = slider.scrollHeight;
-      console.log("init height = " + initialSliderHeight);
     }
     // remove scaling and set initial height
     scaledSlider.style.transform = "";
-    console.log("settings init height = " + initialSliderHeight);
-
     slider.style.height = initialSliderHeight;
   }
 }
@@ -120,7 +117,6 @@ function changeCurrentItem(n) {
 const nextSlide = document.getElementById("nextSlide");
 nextSlide.addEventListener("click", e => {
   size = sliderItems[0].clientWidth;
-  console.log("next " + size);
   if (counter === 1) {
     sliderContainer.style.transform =
       "translateX(" + 2 * -size * counter + "px)";
@@ -134,7 +130,6 @@ nextSlide.addEventListener("click", e => {
 const previousSlide = document.getElementById("previousSlide");
 previousSlide.addEventListener("click", e => {
   size = sliderItems[0].clientWidth;
-  console.log("prev " + size);
   sliderContainer.style.transition = "transform 0.4s ease-in-out";
   changeCurrentItem(counter - 1);
   transitionSlide();
